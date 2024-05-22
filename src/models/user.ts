@@ -17,7 +17,7 @@ export interface userInterface extends Document {
   email_: string;
   role_: string;
   created_at_: Date;
-  upload_movies_: Array<Schema.Types.ObjectId>;
+  liked_movies_: Array<Schema.Types.ObjectId>;
   subcription_up_: boolean;
 }
 
@@ -63,7 +63,7 @@ const userSchema = new Schema<userInterface>({
     type: Date,
     default: Date.now,
   },
-  upload_movies_: {
+  liked_movies_: {
     ref: 'Movie',
     type: Array<Schema.Types.ObjectId>(),
   },
